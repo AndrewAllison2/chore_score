@@ -7,6 +7,7 @@ namespace chore_score.Models;
         public bool IsFinished { get; set; }
 
 
+
         public Chore(string tilte, int timeToFinish, bool isFinished)
         {
             Tilte = tilte;
