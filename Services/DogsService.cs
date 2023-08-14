@@ -31,4 +31,10 @@ public class DogsService
         List<Dog> dogs = _dogsRepository.GetDogs();
         return dogs;
     }
+
+    internal Dog RemoveDog(string dogName)
+    {
+        Dog dog = _dogsRepository.RemoveDog(dogName);
+        return dog;
+    }
 }

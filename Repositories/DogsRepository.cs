@@ -36,4 +36,11 @@ public class DogsRepository
     {
         return dbDogs;
     }
+
+    internal Dog RemoveDog(string dogName)
+    {
+        Dog dogToRemove = GetDogByName(dogName);
+        dbDogs.Remove(dogToRemove);
+        return dogToRemove;
+    }
 }

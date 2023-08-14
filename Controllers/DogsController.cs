@@ -59,4 +59,18 @@ namespace chore_score.Controllers;
                 return BadRequest(e.Message);
             }
     }
+
+    [HttpDelete("{dogName}")]
+    public ActionResult<string> RemoveDog(string dogName)
+    {
+        try
+        {
+            Dog dog = _dogsService.RemoveDog(dogName);
+            return Ok($"{dog.Name} was removed from the list of good boys.");
+        }
+        catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+    }
     }
