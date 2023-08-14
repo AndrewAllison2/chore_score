@@ -18,6 +18,13 @@ public class DogsRepository
 
     }
 
+    internal Dog GetDogByName(string dogName)
+    {
+
+        // this should be done in the service
+        Dog foundDog = dbDogs.Find(d => d.Name.ToLower() == dogName.ToLower());
+        return foundDog;
+    }
 
     internal List<Dog> GetDogs()
     {

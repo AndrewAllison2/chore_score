@@ -13,8 +13,14 @@ public class DogsService
     {
         _dogsRepository = dogsRepository;
     }
-    
-        internal List<Dog> GetDogs()
+
+    internal Dog GetDogByName(string dogName)
+    {
+        Dog dog = _dogsRepository.GetDogByName(dogName);
+        return dog;
+    }
+
+    internal List<Dog> GetDogs()
     {
         List<Dog> dogs = _dogsRepository.GetDogs();
         return dogs;

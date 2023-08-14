@@ -31,4 +31,18 @@ namespace chore_score.Controllers;
                 return BadRequest(e.Message);
             }
     }
+
+    [HttpGet("{dogName}")]
+    public ActionResult<Dog> GetDogByName(string dogName)
+    {
+        try
+        {
+            Dog dog = _dogsService.GetDogByName(dogName);
+            return Ok(dog);
+        }
+        catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+    }
     }
