@@ -68,5 +68,19 @@ namespace chore_score.Controllers
                 return BadRequest(e.Message);
             }
         }
+
+        [HttpPut("{choreName}")]
+        public ActionResult<Chore> EditChore(string choreName, [FromBody] Chore choreData)
+        {
+            try
+            {
+                Chore chore = _choresService.EditChore(choreName, choreData);
+                return Ok(chore);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
     }
 }

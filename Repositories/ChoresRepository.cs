@@ -22,6 +22,15 @@ namespace chore_score.Repositories;
         return choreData;
     }
 
+    internal Chore EditChore(string choreName, Chore choreData)
+    {
+        Chore choreToEdit = dbChores.Find(c => c.Tilte == choreName);
+        choreToEdit.Tilte = choreData.Tilte;
+        choreToEdit.IsFinished = choreData.IsFinished;
+        // dbChores.Add(choreToEdit);
+        return choreToEdit;
+    }
+
     internal Chore GetChoreByName(string choreName)
     {
         Chore foundChore = dbChores.Find(c => c.Tilte.ToLower() == choreName.ToLower());

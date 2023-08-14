@@ -17,6 +17,12 @@ namespace chore_score.Services;
         return chore;
     }
 
+    internal Chore EditChore(string choreName, Chore choreData)
+    {
+        Chore chore = _choresRepository.EditChore(choreName, choreData);
+        return chore;
+    }
+
     internal Chore GetChoreByName(string choreName)
     {
         Chore chore = _choresRepository.GetChoreByName(choreName);
