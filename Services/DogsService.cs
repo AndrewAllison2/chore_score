@@ -14,6 +14,12 @@ public class DogsService
         _dogsRepository = dogsRepository;
     }
 
+    internal Dog CreateDog(Dog dogData)
+    {
+        Dog dog = _dogsRepository.CreateDog(dogData);
+        return dog;
+    }
+
     internal Dog GetDogByName(string dogName)
     {
         Dog dog = _dogsRepository.GetDogByName(dogName);

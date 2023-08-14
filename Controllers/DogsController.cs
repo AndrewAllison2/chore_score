@@ -45,4 +45,18 @@ namespace chore_score.Controllers;
                 return BadRequest(e.Message);
             }
     }
+
+    [HttpPost]
+    public ActionResult<Dog> CreateDog([FromBody] Dog dogData)
+    {
+        try
+            {
+                Dog dog = _dogsService.CreateDog(dogData);
+                return dog;
+            }
+        catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+    }
     }

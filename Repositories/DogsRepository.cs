@@ -18,6 +18,12 @@ public class DogsRepository
 
     }
 
+    internal Dog CreateDog(Dog dogData)
+    {
+        dbDogs.Add(dogData);
+        return dogData;
+    }
+
     internal Dog GetDogByName(string dogName)
     {
 
