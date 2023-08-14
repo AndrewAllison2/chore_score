@@ -16,6 +16,12 @@ namespace chore_score.Repositories;
         dbChores.Add(new Chore("Walk Finn", 1, true));
     }
 
+    internal Chore CreateChore(Chore choreData)
+    {
+        dbChores.Add(choreData);
+        return choreData;
+    }
+
     internal Chore GetChoreByName(string choreName)
     {
         Chore foundChore = dbChores.Find(c => c.Tilte.ToLower() == choreName.ToLower());
