@@ -10,6 +10,13 @@ namespace chore_score.Services;
     {
         _choresRepository = choresRepository;
     }
+
+    internal Chore GetChoreByName(string choreName)
+    {
+        Chore chore = _choresRepository.GetChoreByName(choreName);
+        return chore;
+    }
+
     internal List<Chore> GetChores()
     {
         List<Chore> chores = _choresRepository.GetChores();

@@ -26,5 +26,19 @@ namespace chore_score.Controllers
                 return BadRequest(e.Message);
             }
         }
+
+        [HttpGet("{choreName}")]
+        public ActionResult<Chore> GetChoreByName(string choreName)
+        {
+            try
+            {
+                Chore chore = _choresService.GetChoreByName(choreName);
+                return Ok(chore);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
     }
 }
