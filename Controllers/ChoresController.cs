@@ -54,5 +54,19 @@ namespace chore_score.Controllers
                 return BadRequest(e.Message);
             }
         }
+
+        [HttpDelete("{choreName}")]
+        public ActionResult<string> RemoveChore(string choreName)
+        {
+            try
+            {
+                Chore chore = _choresService.RemoveChore(choreName);
+                return Ok($"{chore.Tilte} was crossed off the To-Do list!");
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
     }
 }

@@ -29,5 +29,9 @@ namespace chore_score.Services;
         return chores;
     }
 
-
+    internal Chore RemoveChore(string choreName)
+    {
+        Chore chore = _choresRepository.RemoveChore(choreName);
+        return chore;
     }
+}

@@ -32,4 +32,11 @@ namespace chore_score.Repositories;
     {
         return dbChores;
     }
+
+    internal Chore RemoveChore(string choreName)
+    {
+        Chore choreToFinish = GetChoreByName(choreName);
+        dbChores.Remove(choreToFinish);
+        return choreToFinish;
     }
+}
