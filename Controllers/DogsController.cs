@@ -73,4 +73,4 @@ namespace chore_score.Controllers;
                 return BadRequest(e.Message);
             }
     }
-    }
+}
